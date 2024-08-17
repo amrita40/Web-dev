@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOVER</title>
+
+    <button class="subscribe-button">SUBSCRIBE</button>
+    &nbsp;  <!--to give space we use-->
+    <button class="join-button">JOIN</button>
+    <button class="tweet-button">TWEET</button>
+    <style>
+
+.subscribe-button{   
+        background-color: rgb(180, 9, 9);
+color: white;
+border: none;
+height: 36px; 
+width: 100px;
+border-radius: 3px;
+cursor: pointer;
+/* in css to give space we use the prop as margin */
+margin-right: 2px;
+transition:opacity 0.15s; /*this is the transition effect on the subs button*/
+
+    }
+
+ /* .subscribe-button:hover{ (when u put the cursor on the button a change of color is observed )*/
+
+    /* background-color: brown; */
+ /* }    */
+ /* .subscribe-button:active{  when u tap to activate the button */
+/* background-color: aqua; */
+
+ /* } */
+
+ .subscribe-button:hover{
+
+    opacity: 0.7; /*it takes the value bw 0 and 1 color halka kr deta hai*/
+
+ }
+ .subscribe-button:active{
+    opacity: 0.5;
+ }
+
+ .join-button{
+ background-color: white;
+    border-radius: 2px;
+    border-color: rgb(34, 173, 248);
+    color: rgb(34, 173, 248) ;
+    height:25px;
+    width: 50px;
+border-width: 1px;
+/* while doing this of the above code your border color will be of 2 color so to get only 1 color we use the below prop ie */
+border-style: solid;
+cursor: pointer;
+margin-right: 2px;
+transition: background-color 0.15s; /*it takes 2 values what u wanna transition and till how much time*/
+
+}
+
+.join-button:hover{
+    background-color: rgb(34, 173, 248);
+    color: white;
+    
+}
+.join-button:active{
+    opacity: 0.5;
+}
+
+
+.tweet-button{
+color: white;
+background-color: rgb(20, 170, 216);
+border-radius: 100px;
+border-color: rgb(20, 170, 216);
+border-style: solid;
+height: 25px;
+font-weight: bold;
+font: size 5px; 
+cursor: pointer;
+/*FOR SHADOW*/
+/* box-shadow: 10px 10px 10px red; right,downward, blur then color */ /* FOR SHADOW*/
+
+
+}
+
+.tweet-button:hover{
+    box-shadow: 5px 5px 10px grey;
+}
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

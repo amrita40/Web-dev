@@ -1,0 +1,69 @@
+<!--Design a captivating webpage aimed at promoting an upcoming event or fest at the National Institute of Technology (NIT) Kurukshetra.
+The webpage should provide essential details about the event (including Images, Videos) and encourage attendees to participate or learn more.
+Additionally, the webpage should facilitate seamless registration and participation for interested students.
+Incorporate various HTML elements and attributes such as a search bar, iframe, calendar, min and max attributes, placeholder attribute, ID card upload (only .jpg/.jpeg/.png are allowed), and embed a Google Map iframe functionality.
+ Your task involves creating an engaging and informative webpage using HTML and CSS.-->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIT Kurukshetra Event</title>
+    <style>
+        /* CSS styles go here */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NIT Kurukshetra Event</h1>
+        <nav> <!--used to define set of navigation set-->
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main><!---specifies the main content of the document-->
+        <section id="about">
+            <h2>About the Event</h2>
+            <p>Event description goes here...</p>
+            <img src="data:image/jpeg;base64,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" alt="Event Image">
+            <video controls>
+                <source src="https://youtu.be/9hrKxfPmZIs?t=2" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+        <section id="schedule">
+            <h2>Event Schedule</h2>
+            <p>Event schedule details go here...</p>
+       <!--The <iframe> tag specifies an inline frame.
+        An inline frame is used to embed another document within the current HTML document.-->     <iframe src="https://www.shutterstock.com/shutterstock/photos/2297287361/display_1500/stock-vector-calendar-upcoming-events-schedule-template-vector-template-2297287361.jpg" width="100%" height="600px"></iframe>
+        </section>
+        <section id="register">
+            <h2>Register for the Event</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="idcard">Upload ID Card (jpg/jpeg/png only):</label>
+                <input type="file" id="idcard" name="idcard" accept="image/jpeg,image/png">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" min="1900-01-01" max="2023-12-31" required>
+                <input type="submit" value="Register">
+            </form>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Contact information goes here...</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3479.1179054296395!2d77.04796011475458!3d29.96574898190378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3911e4fb3a4ba845%3A0x8df5770d6fd03bd2!2sNational%20Institute%20of%20Technology%20Kurukshetra!5e0!3m2!1sen!2sin!4v1648056557500!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+    </main>
+    
+</body>
+</html>
+

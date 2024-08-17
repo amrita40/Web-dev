@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Feedback Form</title>
+    <style>
+        /* Add some basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Faculty Feedback Form</h2>
+        <form id="feedbackForm" onsubmit="return validateForm()">
+            <label for="studentName">Student Name:</label>
+            <input type="text" id="studentName" name="studentName" required>
+            <label for="studentEmail">Student Email:</label>
+            <input type="email" id="studentEmail" name="studentEmail" required>
+            <label for="facultyName">Faculty Name:</label>
+            <select id="facultyName" name="facultyName" required>
+                <option value="">Select Faculty</option>
+                <option value="John Doe">FACULTY 1</option>
+                <option value="Jane Smith">FACULTY 2</option>
+                <option value="Robert Johnson">FACULTY 3</option>
+                <!-- Add more options as needed -->
+            </select>
+            <label>Rating:</label>
+            <div>
+                <input type="radio" id="ratingExcellent" name="rating" value="Excellent" required>
+                <label for="ratingExcellent">5</label>
+                <input type="radio" id="ratingGood" name="rating" value="Good">
+                <label for="ratingGood">4</label>
+                <input type="radio" id="ratingFair" name="rating" value="Fair">
+                <label for="ratingFair">3</label>
+                <input type="radio" id="ratingPoor" name="rating" value="Poor">
+                <label for="ratingPoor">2</label>
+                <input type="radio" id="veryPoor" name="rating" value="veryPoor">
+                <label for="ratingPoor">1</label>
+            </div>
+            <label for="positiveAspects">Positive Aspects:</label>
+            <textarea id="positiveAspects" name="positiveAspects" required></textarea>
+            <label for="areasForImprovement">Areas for Improvement:</label>
+            <textarea id="areasForImprovement" name="areasForImprovement" required></textarea>
+            <button type="submit">Submit Feedback</button>
+            
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var form = document.getElementById("feedbackForm");
+            var studentName = form["studentName"].value.trim();
+            var studentEmail = form["studentEmail"].value.trim();
+            var facultyName = form["facultyName"].value;
+            var rating = form["rating"].value;
+            var positiveAspects = form["positiveAspects"].value.trim();
+            var areasForImprovement = form["areasForImprovement"].value.trim();
+            var isValid = true;
+
+            // Simple validation example
+            if (studentName === "") {
+                isValid = false;
+                document.getElementById("studentName").classList.add("error");
+            } else {
+                document.getElementById("studentName").classList.remove("error");
+            }
+
+            if (studentEmail === "" || !isValidEmail(studentEmail)) {
+                isValid = false;
+                document.getElementById("studentEmail").classList.add("error");
+            } else {
+                document.getElementById("studentEmail").classList.remove("error");
+            }
+
+            if (facultyName === "") {
+                isValid = false;
+                document.getElementById("facultyName").classList.add("error");
+            } else {
+                document.getElementById("facultyName").classList.remove("error");
+            }
+
+            if (rating === "") {
+                isValid = false;
+                // Radio buttons do not have IDs, so we have to loop through them
+                var radios = document.getElementsByName("rating");
+                for (var i = 0; i < radios.length; i++) {
+                    radios[i].classList.add("error");
+                }
+            } else {
+                // Remove error class from all radio buttons
+                var radios = document.getElementsByName("rating");
+                for (var i = 0; i < radios.length; i++) {
+                    radios[i].classList.remove("error");
+                }
+            }
+
+            if (positiveAspects === "") {
+                isValid = false;
+                document.getElementById("positiveAspects").classList.add("error");
+            } else {
+                document.getElementById("positiveAspects").classList.remove("error");
+            }
+
+            if (areasForImprovement === "") {
+                isValid = false;
+                document.getElementById("areasForImprovement").classList.add("error");
+            } else {
+                document.getElementById("areasForImprovement").classList.remove("error");
+            }
+
+            return isValid;
+        }
+
+        // Function to validate email format
+        function isValidEmail(email) {
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    </script>
+    
+</body>
+</html>

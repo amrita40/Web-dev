@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        #profile-card {
+            width: 300px;
+            height: 420px;
+            background-color: rgb(244, 242, 101);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        #profile-picture {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            
+        }
+
+        #contact-info {
+            padding: 15px;
+        }
+
+        #contact-info a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="profile-card">
+        <img id="profile-picture" src="data:image/jpeg;base64,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" alt="Profile Picture">
+        <div id="contact-info">
+            <h2>AMRITANSHU SINHA</h2>
+            <p>SOFTWARE DEVELOPER</p>
+            <p>Contact: <a href="tel:+123456789">+123 456 789</a></p>
+            <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+            <p><a href="https://linkedin.com/in/your-linkedin">LinkedIn Profile</a></p>
+        </div>
+    </div>
+
+</body>
+</html>

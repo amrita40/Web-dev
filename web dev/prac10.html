@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Student Management System</h1>
+    
+    <form action="prac10.php" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject">
+        <label for="marks">Marks:</label>
+        <input type="number" id="marks" name="marks">
+        <button type="submit">Add Student</button>
+    </form>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Marks</th>
+            <th>Action</th>
+        </tr>
+        <?php
+        include 'db.php'; // Include PHP script with database connection and functions
+
+        $students = getStudents(); // Get students from database
+
+        foreach ($students as $student) {
+            echo "<tr>";
+            echo "<td>{$student['name']}</td>";
+            echo "<td>{$student['email']}</td>";
+            echo "<td>{$student['subject']}</td>";
+            echo "<td>{$student['marks']}</td>";
+            echo "<td><a href='edit_student.php?id={$student['student_id']}' >Edit</a> | <a href='delete_student.php?id={$student['student_id']}'>Delete</a></td>";
+            echo "</tr>";
+        }
+        ?>
+    </table>
+</body>
+</html>

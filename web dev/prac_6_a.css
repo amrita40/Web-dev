@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    background: linear-gradient(to right, #333, #666); /* Gradient background */
+    color: white;
+}
+
+.menu {
+    flex: 1;
+    padding: 20px;
+    background: #333;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu ul li {
+    margin-bottom: 10px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.documentation {
+    flex: 3;
+    padding: 20px;
+}
+
+.doc-item {
+    display: none;
+}
+
+.doc-item:target {
+    display: block;
+}

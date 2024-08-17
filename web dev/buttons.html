@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+
+<style>
+button{
+    color: aqua;
+}
+
+    /* the name of the class="subscribe-button and .subscribe-button should be exactly same" */
+   .subscribe-button{   
+        background-color: rgb(197, 2, 2);
+        color: white;
+border: none;
+height: 36px; 
+width: 100px;
+border-radius: 3px;
+cursor: pointer;
+/* in css to give space we use the prop as margin */
+margin-right: 2px;
+
+    }
+
+.join-button{
+ background-color: white;
+    border-radius: 2px;
+    border-color: rgb(34, 173, 248);
+    color: rgb(34, 173, 248);
+    height:25px;
+    width: 50px;
+border-width: 1px;
+/* while doing this of the above code your border color will be of 2 color so to get only 1 color we use the below prop ie */
+border-style: solid;
+cursor: pointer;
+margin-right: 2px;
+
+}
+
+.tweet-button{
+color: white;
+background-color: rgb(20, 170, 216);
+border-radius: 100px;
+border-color: rgb(20, 170, 216);
+border-style: solid;
+height: 25px;
+font-weight: bold;
+font: size 5px; 
+cursor: pointer;
+
+}
+    
+</style>
+</head>
+<body>
+   <!-- the main technique is to make html and then add css to it -->
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>buttons</title>
+   <button title="simple">simple button</button>
+   <button class="subscribe-button" title="subscribe">SUBSCRIBE</button> <!--to diff bw 2 buttons give it a class name and to initiate use .classname-button-->
+   <!-- title is used when u put the cursor on the button it will show the title -->
+   &nbsp;  <!--to give space we use-->
+   <button class="join-button">JOIN</button>
+   <!-- the button part tells that it is the selector in which u have to do the css part-->
+   <!--background colour is  the css property and red is the css value-->
+   <!--: is used to separte property and value of css and ; is used to terminate the statement-->
+   <!--for changing the color inside the button text use color and not text color-->
+   <!-- HERE RDG means the specified colour is the combination of red green blue therefore the values of the repective color is 197,2,2-->
+<!-- for corner of the button to be round use border-radius-->
+
+<button class="tweet-button">TWEET</button>
+
+
+
+</body>
+</html>
+
+<!--head contains the things which is not shown in the page and body contain the thing which is shown in the page-->
